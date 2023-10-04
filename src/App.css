@@ -1,0 +1,255 @@
+:root {
+  --mainbackground: hsl(222, 26%, 31%);
+  --togglebackground: hsl(223, 31%, 20%);
+  --screenbackground: hsl(224, 36%, 15%);
+  --keysbackground: hsl(225, 21%, 49%);
+  --keysshadow: hsl(224, 28%, 35%);
+  --keysfontcolor: hsl(221, 14%, 31%);
+  --keysfontwhite: hsl(0, 0%, 100%);
+  --keysequal: hsl(6, 63%, 50%);
+  --keysequalshadow: hsl(6, 70%, 34%);
+}
+
+* {
+  color: white;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--mainbackground);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#calculator {
+  width: 90%;
+  max-width: 400px;
+}
+
+.grid-container {
+  background-color: var(--togglebackground);
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+}
+
+button {
+  display: flex;
+  height: 1.5rem;
+  width: 2.5rem;
+  border-color: var(--keysbackground);
+  border-width: 0 0 3px 0;
+  border-radius: 0.2rem;
+  box-shadow: 0px 0px 3px 0px var(--keysshadow);
+  justify-content: center;
+  align-items: center;
+  /* padding: auto auto; */
+  /* background-color: var(--keysbackground); */
+}
+button > p {
+  color: var(--keysfontcolor);
+}
+.buttons > .reset {
+  width: 5.5rem;
+  background-color: var(--keysbackground);
+  box-shadow: 0 0 3px 0 var(--keysshadow);
+}
+
+.reset > p {
+  font-size: 0.7rem;
+  color: var(--keysfontwhite);
+}
+.del > p {
+  font-size: 0.7rem;
+  color: var(--keysfontwhite);
+}
+
+.buttons > .equal {
+  width: 5.5rem;
+  background-color: var(--keysequal);
+  border-color: var(--keysequalshadow);
+}
+.buttons > .del {
+  background-color: var(--keysbackground);
+  color: var(--keysfontwhite);
+}
+
+.grid-container > .buttons {
+  display: grid;
+  gap: 0.4em;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid:
+    "grid7 grid8 grid9 del"
+    "grid4 grid5 grid6 pluss"
+    "grid3 grid2 grid1 minus"
+    "dot zero divide multiply"
+    "reset reset equal equal";
+}
+.buttons {
+  display: flex;
+}
+.grid1 {
+  grid-area: grid1;
+}
+.grid2 {
+  grid-area: grid2;
+}
+.grid3 {
+  grid-area: grid3;
+}
+.grid4 {
+  grid-area: grid4;
+}
+.grid5 {
+  grid-area: grid5;
+}
+.grid6 {
+  grid-area: grid6;
+}
+.grid7 {
+  grid-area: grid7;
+}
+.grid8 {
+  grid-area: grid8;
+}
+.grid9 {
+  grid-area: grid9;
+}
+.dot {
+  grid-area: dot;
+}
+.reset {
+  grid-area: reset;
+}
+.equal {
+  grid-area: equal;
+}
+.del {
+  grid-area: del;
+}
+.pluss {
+  grid-area: pluss;
+}
+.minus {
+  grid-area: minus;
+}
+.multiply {
+  grid-area: multiply;
+}
+.divide {
+  grid-area: divide;
+}
+
+#display {
+  display: flex;
+  background-color: var(--screenbackground);
+  height: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.6rem 0;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+}
+
+/* ## Layout
+  
+  The designs were created to the following widths:
+  
+  - Mobile: 375px
+  - Desktop: 1440px
+  
+  ## Colors
+  
+  ### Theme 1
+  
+  #### Backgrounds
+  
+  - Very dark desaturated blue (main background): hsl(222, 26%, 31%)
+  - Very dark desaturated blue (toggle background, keypad background): hsl(223, 31%, 20%)
+  - Very dark desaturated blue (screen background): hsl(224, 36%, 15%)
+  
+  #### Keys
+  
+  - Desaturated dark blue (key background): hsl(225, 21%, 49%)
+  - Desaturated dark blue (key shadow): hsl(224, 28%, 35%)
+  
+  - Red (key background, toggle): hsl(6, 63%, 50%)
+  - Dark red (key shadow): hsl(6, 70%, 34%)
+  
+  - Light grayish orange (key background): hsl(30, 25%, 89%)
+  - Grayish orange (key shadow): hsl(28, 16%, 65%)
+  
+  #### Text
+  
+  - Very dark grayish blue: hsl(221, 14%, 31%)
+  - White: hsl(0, 0%, 100%)
+  
+  ### Theme 2
+  
+  #### Backgrounds
+  
+  - Light gray (main background): hsl(0, 0%, 90%)
+  - Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
+  - Very light gray (screen background): hsl(0, 0%, 93%)
+  
+  #### Keys
+  
+  - Dark moderate cyan (key background): hsl(185, 42%, 37%)
+  - Very dark cyan (key shadow): hsl(185, 58%, 25%)
+  
+  - Orange (key background, toggle): hsl(25, 98%, 40%)
+  - Dark orange (key shadow): hsl(25, 99%, 27%)
+  
+  - Light grayish yellow (key background): hsl(45, 7%, 89%)
+  - Dark grayish orange (key shadow): hsl(35, 11%, 61%)
+  
+  #### Text
+  
+  - Very dark grayish yellow: hsl(60, 10%, 19%)
+  - White (text): hsl(0, 0%, 100%)
+  
+  ### Theme 3
+  
+  #### Backgrounds
+  
+  - Very dark violet (main background): hsl(268, 75%, 9%)
+  - Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+  
+  #### Keys
+  
+  - Dark violet (key background): hsl(281, 89%, 26%)
+  - Vivid magenta (key shadow): hsl(285, 91%, 52%)
+  
+  - Pure cyan (key background, toggle): hsl(176, 100%, 44%)
+  - Soft cyan (key shadow): hsl(177, 92%, 70%)
+  
+  - Very dark violet (key background): hsl(268, 47%, 21%)
+  - Dark magenta (key shadow): hsl(290, 70%, 36%)
+  
+  #### Text
+  
+  - Light yellow: hsl(52, 100%, 62%)
+  - Very dark blue: hsl(198, 20%, 13%)
+  - White (text): hsl(0, 0%, 100%)
+  
+  ## Typography
+  
+  ### Body Copy
+  
+  - Font size (numbers): 32px
+  
+  ### Font
+  
+  - Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+  - Weights: 700 */
