@@ -8,6 +8,8 @@
   --keysfontwhite: hsl(0, 0%, 100%);
   --keysequal: hsl(6, 63%, 50%);
   --keysequalshadow: hsl(6, 70%, 34%);
+  --onhoverblue: hsl(224, 51%, 76%);
+  --onhoverred: hsl(6, 93%, 67%);
 }
 
 * {
@@ -160,6 +162,20 @@ button > p {
   margin: 0.6rem 0;
   padding-right: 0.7rem;
   padding-left: 0.7rem;
+}
+
+/* on hover  */
+
+.del:hover {
+  background-color: var(--onhoverblue);
+}
+
+.reset:hover {
+  background-color: var(--onhoverblue);
+}
+
+.equal:hover {
+  background-color: var(--onhoverred);
 }
 
 /* ## Layout
