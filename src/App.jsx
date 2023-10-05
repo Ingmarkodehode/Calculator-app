@@ -42,6 +42,15 @@ function App() {
   const calculate = () => {
     setCalc(eval(calc).toString());
   };
+
+  const reset = () => {
+    if (calc == "") {
+      return;
+    }
+    const resetCalc = "";
+    setCalc(resetCalc);
+    setResult(resetCalc);
+  };
   /* if calc = empty return else slice from first digit (0) (slice removes 1 since spesified -1) and setCalc becomes the new value*/
   const deleteLast = () => {
     if (calc == "") {
@@ -97,7 +106,7 @@ function App() {
               {/* sets up the 0 and . buttons */}
 
               {/* sets up the = button with a onclick to the calculate function */}
-              <button className="reset">
+              <button className="reset" onClick={reset}>
                 <p>RESET</p>
               </button>
               <button className="equal" onClick={calculate}>
