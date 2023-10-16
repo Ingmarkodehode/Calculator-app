@@ -1,0 +1,60 @@
+/* :root {
+  --one: rgb(0, 0, 255);
+  --two: #000;
+}
+
+#test {
+  width: 90svw;
+  height: 100svh;
+}
+
+#tdiv {
+  display: flex;
+  margin: 50px 0 10px;
+  position: relative;
+}
+
+label,
+h6 {
+  display: flex;
+  position: relative;
+  left: 60px;
+}
+#input {
+  height: 30px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: red;
+  position: relative;
+  left: 90px;
+}
+[id="theme1"],
+[id="theme2"] {
+  appearance: none;
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  border-radius: 30px;
+  top: 7.5px;
+  transition: 0.5s;
+}
+
+[id="theme1"] {
+  left: 0%;
+}
+
+[id="theme2"] {
+  left: 50%;
+}
+
+label {
+  top: -40px;
+}
+
+label[for="theme1"] {
+  left: 13px;
+}
+
+label[for="theme2"] {
+  left: 20px;
+} */

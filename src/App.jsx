@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import ThemeChange from "./modules/keypad/themechange";
 
 function App() {
   const [calc, setCalc] = useState("");
@@ -63,10 +64,11 @@ function App() {
   return (
     <>
       <div id="app">
-        <div id="upper">
+        <ThemeChange />
+        {/* <div id="upper">
           <p>Calc</p>
           <h6>Theme</h6>
-        </div>
+        </div> */}
         <div id="calculator">
           <div id="display">
             {result ? <span>({result})</span> : ""}&nbsp;
