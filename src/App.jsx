@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import ThemeChange from "./modules/keypad/themechange";
 
 function App() {
   const [calc, setCalc] = useState("");
@@ -64,11 +63,6 @@ function App() {
   return (
     <>
       <div id="app">
-        <ThemeChange />
-        {/* <div id="upper">
-          <p>Calc</p>
-          <h6>Theme</h6>
-        </div> */}
         <div id="calculator">
           <div id="display">
             {result ? <span>({result})</span> : ""}&nbsp;
@@ -77,7 +71,6 @@ function App() {
           <div className="grid-container">
             <div className="buttons">
               {/* sets up the divide, multible, pluss and minus button and updates the calc with the correct operator */}
-              {/* <div id="operators"> */}
               <button className="divide" onClick={() => updateCalc("/")}>
                 <p>/</p>
               </button>
@@ -100,10 +93,7 @@ function App() {
               <button className="dot" onClick={() => updateCalc(".")}>
                 <p>.</p>
               </button>
-              {/* </div> */}
 
-              {/* <div className="digits"> */}
-              {/* <div id="digits"> */}
               {createDitigs()}
               {/* sets up the 0 and . buttons */}
 
@@ -114,7 +104,6 @@ function App() {
               <button className="equal" onClick={calculate}>
                 <p>=</p>
               </button>
-              {/* </div> */}
             </div>
           </div>
         </div>
@@ -124,34 +113,3 @@ function App() {
 }
 
 export default App;
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App

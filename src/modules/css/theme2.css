@@ -1,5 +1,49 @@
-* {
+/* * {
   background-color: red;
+} */
+
+:root {
+  /* backgrounds */
+  --mainbg: hsl(0, 0%, 90%);
+  --keytogglebg: hsl(0, 5%, 81%);
+  --screenbg: hsl(0, 0%, 93%);
+
+  /* keys */
+
+  --keycyansbg: hsl(185, 42%, 37%);
+  --darkcyanbg: hsl(185, 58%, 25%);
+
+  --keyorangebgtoggle: hsl(25, 98%, 40%);
+  --darkorangeshadow: hsl(25, 99%, 27%);
+
+  --lightgrayyellowbg: hsl(45, 7%, 89%);
+  --darkgrayorangeshadow: hsl(35, 11%, 61%);
+
+  /* text */
+
+  --fontdarkgrayyellow: hsl(60, 10%, 19%);
+  --fontwhite: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--mainbg);
+}
+
+#display {
+  background-color: var(--fontwhite);
+  color: var(--fontdarkgrayyellow);
+}
+
+.grid-container {
+  background-color: var(--keytogglebg);
+}
+
+button {
+  background-color: var(--screenbg);
+}
+
+.buttons > .equal {
+  background-color: var(--keyorangebgtoggle);
 }
 
 /* ### Theme 2
